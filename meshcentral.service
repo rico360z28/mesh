@@ -1,0 +1,8 @@
+[Unit]
+Description=Mesh2
+After=network.target
+[Service]
+ExecStart=/opt/meshstart.sh
+[Install]
+WantedBy=multi-user.target
+
