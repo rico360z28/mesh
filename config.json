@@ -1,7 +1,5 @@
 {
-  "__comment__" : "This is a sample configuration file, edit a section 
-and remove the _ in front of the name. Refer to the user's guide for 
-details.",
+  "__comment__" : "This is a sample configuration file, edit a section and remove the _ in front of the name. Refer to the user's guide for details.",
   "settings": {
     "_MongoDb": "mongodb://127.0.0.1:27017/meshcentral",
     "_MongoDbCol": "meshcentral",
