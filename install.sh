@@ -22,19 +22,19 @@ apt update
 apt install curl -y
 #
 # Installing Nodejs
-#curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-#sudo apt-get install -y nodejs
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install -y nodejs
 #
 #Install Meshcentral2 via NPM
 npm install meshcentral
 #
 sleep 2
 #
-cd ./node_modules/meshcentral
+cd ./node_modules/
 #creating local cert for Meshcentral
 #
 machine="$(hostname -A)"
-node meshcentral --cert $(machine) &&
+node meshcentral --cert $machine ;
 #
 sleep 15
 node meshcentral --stop
@@ -48,9 +48,9 @@ wanip="$(curl ifconfig.me)"
 #
 #
 fi
-  echo "Install Completed"
-  echo "Verify and put public https address here $wanip"
-  echo "Verify and put private https address here $lanip"
+  echo "Install Completed for $machine "
+  echo "Verify and put public https address here $wanip "
+  echo "Verify and put private https address here $lanip "
 sleep 5
 
 
