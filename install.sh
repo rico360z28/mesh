@@ -36,6 +36,7 @@ cd ./node_modules/
 machine="$(hostname -A)"
 node meshcentral --cert $machine &
 #
+sleep 5
 echo "sleep"
 sleep 10
 kill $(ps aux | grep '[m]esh' | awk '{print $2}')
