@@ -14,3 +14,9 @@ Port 80 must be accessable to the internet
 
 For Gmail as your SMTP
 Must use port 465 and use TLS (see supplied config.json)
+
+Tested on Ubuntu 16.04 other distros may work.
+
+Thanks to Ylian for this awesome tool
+
+For further questions reference: http://info.meshcentral.com/downloads/MeshCentral2/MeshCentral2UserGuide.pdf
