@@ -10,8 +10,8 @@ then
   exit 1
 else
   #do your stuff
-#  echo "Do Stuff"
-  echo "$exas"
+#
+#
 #
 # Create Mesh Directory
 mkdir ~/meshcentral
@@ -39,7 +39,7 @@ machine="$(hostname -A)"
 node meshcentral --cert $machine &
 #
 sleep 5
-echo "sleep"
+echo "Server will be stopped after local cert is created"
 sleep 10
 kill $(ps aux | grep '[m]esh' | awk '{print $2}')
 #
@@ -50,24 +50,23 @@ cp ~/mesh/meshstart.sh /opt/meshstart.sh
 #
 #
 #Installing Service
-#systemctl enable meshcentral.service
-#systemctl start meshcentral.service
-#systemctl status meshcentral.service
+systemctl enable meshcentral.service
+systemctl start meshcentral.service
+systemctl status meshcentral.service
 #
+sleep 5
 #
-lanip="$(hostname -I)"
-wanip="$(curl ifconfig.me)"
+lanip="$(hostname -I | tr -d ' ')"
+wanip="$(curl ifconfig.me )"
+port="$(netstat -pant | grep -m1 '[n]ode' | awk '{print $4}' | cut -f2 -d":" | tail -n1)"
 #
 #
 #
 fi
   echo "Install Completed for $machine "
-  echo "Verify and put public https address here $wanip "
-  echo "Verify and put private https address here $lanip "
+  echo "Meshcentral 2 is available at (if open to internet) $wanip:$port "
+  echo "Meshcentral 2 is available at $lanip:$port "
 sleep 5
 
 
 
-#systemctl enable meshcentral.service
-#systemctl start meshcentral.service
-#systemctl status meshcentral.service
