@@ -10,7 +10,7 @@ then
   exit 1
 else
   #do your stuff
-  echo "Do Stuff"
+#  echo "Do Stuff"
   echo "$exas"
 #
 # Create Mesh Directory
@@ -34,10 +34,12 @@ cd ./node_modules/
 #creating local cert for Meshcentral
 #
 machine="$(hostname -A)"
-node meshcentral --cert $machine ;
+node meshcentral --cert $machine &
 #
-sleep 15
-node meshcentral --stop
+echo "sleep"
+sleep 10
+kill $(ps aux | grep '[m]esh' | awk '{print $2}')
+#node meshcentral --stop
 #
 #
 #
