@@ -42,9 +42,17 @@ sleep 5
 echo "sleep"
 sleep 10
 kill $(ps aux | grep '[m]esh' | awk '{print $2}')
-#node meshcentral --stop
 #
 #
+#Creating Service
+cp ~/mesh/meshcentral.service /etc/systemd/system/meshcentral.service
+cp ~/mesh/meshstart.sh /opt/meshstart.sh
+#
+#
+#Installing Service
+#systemctl enable meshcentral.service
+#systemctl start meshcentral.service
+#systemctl status meshcentral.service
 #
 #
 lanip="$(hostname -I)"
