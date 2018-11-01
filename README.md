@@ -3,7 +3,7 @@ Mesh setup scripts
 
 Quick start from the original https://github.com/Ylianst/MeshCentral
 
-Git clone the repo: git clone https://github.com/rico360z28/mesh.git or git clone git@github.com:rico360z28/mesh.git /n
+Git clone the repo: git clone https://github.com/rico360z28/mesh.git or git clone git@github.com:rico360z28/mesh.git \n
 Run (as root or sudo) the install.sh: /.install.sh
 Create your first/admin user
 
