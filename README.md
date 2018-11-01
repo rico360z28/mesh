@@ -8,5 +8,5 @@ For LetsEncrypt https://letsencrypt.org/
 Allow port80 redirect and supply an email address (see supplied config.json)
 Port 80 must be accessable to the internet
 
-For gmail as your SMPT
+For Gmail as your SMTP
 Must use port 465 and use TLS (see supplied config.json)
