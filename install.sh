@@ -17,6 +17,8 @@ else
 mkdir ~/meshcentral
 cd ~/meshcentral
 #
+#
+#
 # Apt update
 apt update
 apt install curl -y
