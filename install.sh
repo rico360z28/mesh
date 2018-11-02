@@ -32,7 +32,12 @@ cd ./node_modules/
 #creating local cert for Meshcentral
 #
 machine="$(hostname -A)"
-node meshcentral --cert $machine &
+meshcert="node meshcentral --cert $machine"
+#
+echo $meshcert
+#
+$meshcert &
+#node meshcentral --cert &
 #
 sleep 5
 echo "Server will be stopped after local cert is created"
