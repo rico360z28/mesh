@@ -26,7 +26,7 @@ MESHPATH="$PWD/node_modules"
 echo $MESHPATH
 sleep 5
 echo "MESHPATH=\"$PWD/node_modules"\" | sudo tee -a /etc/environment > /dev/null
-source /etc/environment
+sudo source /etc/environment
 echo $MESHPATH
 sleep 5
 #
