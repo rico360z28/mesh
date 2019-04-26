@@ -25,3 +25,4 @@ sudo rm /etc/systemd/system/meshcentral.service
 #
 sudo sed -i '/^MESHPATH\s/d' /etc/environment
 #
+fi
