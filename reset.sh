@@ -23,6 +23,6 @@ sleep 5
 sudo rm /opt/meshstart.sh
 sudo rm /etc/systemd/system/meshcentral.service
 #
-sudo sed -i '/^MESHPATH\s/d' /etc/environment
+sudo sed -i '/MESHPATH/d' /etc/environment
 #
 fi
