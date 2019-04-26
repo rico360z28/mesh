@@ -23,6 +23,7 @@ cd ~/meshcentral
 #
 # Add Mesh Path to environment
 echo "MESHPATH=\"$PWD/node_modules"\" | sudo tee -a /etc/environment > /dev/null
+source /etc/environment
 #
 # Apt update
 apt update
