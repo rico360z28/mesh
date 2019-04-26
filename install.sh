@@ -15,8 +15,8 @@ else
 mkdir ~/meshcentral
 #
 # Creating Service
-cp ./meshcentral.service /etc/systemd/system/meshcentral.service
-cp ./mesh/meshstart.sh /opt/meshstart.sh
+sudo cp ./meshcentral.service /etc/systemd/system/meshcentral.service
+sudo cp ./mesh/meshstart.sh /opt/meshstart.sh
 #
 # Work in directory
 cd ~/meshcentral
