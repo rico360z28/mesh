@@ -6,13 +6,19 @@ then
 # we can compare directly with this syntax.
   echo "Please run as root/sudo"
   echo "$exas"
-  echo "sudo /.install.sh"
+  echo "sudo ./install.sh"
   exit 1
 else
 #do your stuff
 #
 # Create Mesh Directory
 mkdir ~/meshcentral
+#
+# Creating Service
+cp ./meshcentral.service /etc/systemd/system/meshcentral.service
+cp ./mesh/meshstart.sh /opt/meshstart.sh
+#
+# Work in directory
 cd ~/meshcentral
 #
 # Add Mesh Path to environment
@@ -31,7 +37,7 @@ npm install meshcentral
 #
 sleep 2
 #
-cd 
+cd $MESHPATH
 #creating local cert for Meshcentral
 #
 machine="$(hostname -A)"
@@ -46,11 +52,7 @@ sleep 5
 echo "Server will be stopped after local cert is created"
 sleep 10
 kill $(ps aux | grep '[m]esh' | awk '{print $2}')
-#
-#Creating Service
-cp ~/mesh/meshcentral.service /etc/systemd/system/meshcentral.service
-cp ~/mesh/meshstart.sh /opt/meshstart.sh
-#
+
 #Installing Service
 systemctl enable meshcentral.service
 systemctl start meshcentral.service
