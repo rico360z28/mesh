@@ -22,6 +22,7 @@ sudo cp ./meshstart.sh /opt/meshstart.sh
 cd ~/meshcentral
 #
 # Add Mesh Path to environment
+MESHPATH="$PWD/node_modules"
 echo "MESHPATH=\"$PWD/node_modules"\" | sudo tee -a /etc/environment > /dev/null
 source /etc/environment
 #
