@@ -6,7 +6,7 @@ then
 # we can compare directly with this syntax.
   echo "Please run as root/sudo"
   echo "$exas"
-  echo "sudo /.install"
+  echo "sudo /.install.sh"
   exit 1
 else
 #do your stuff
@@ -14,6 +14,9 @@ else
 # Create Mesh Directory
 mkdir ~/meshcentral
 cd ~/meshcentral
+#
+# Add Mesh Path to environment
+echo "MESHPATH="$PWD"/node_modules/meshcentral" | sudo tee -a /etc/environment > /dev/null
 #
 # Apt update
 apt update
@@ -28,7 +31,7 @@ npm install meshcentral
 #
 sleep 2
 #
-cd ./node_modules/
+cd 
 #creating local cert for Meshcentral
 #
 machine="$(hostname -A)"
