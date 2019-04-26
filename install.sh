@@ -22,7 +22,7 @@ sudo cp ./mesh/meshstart.sh /opt/meshstart.sh
 cd ~/meshcentral
 #
 # Add Mesh Path to environment
-echo "MESHPATH="$PWD"/node_modules/meshcentral" | sudo tee -a /etc/environment > /dev/null
+echo "MESHPATH="$PWD"/node_modules" | sudo tee -a /etc/environment > /dev/null
 #
 # Apt update
 apt update
