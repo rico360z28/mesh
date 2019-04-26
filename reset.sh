@@ -1,5 +1,5 @@
 #!/bin/sh
-Root Check
+#Root Check
 exas="$(id -u)"
 if [ "$exas" -gt 0 ] ;
 then
