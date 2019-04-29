@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Root Check
 exas="$(id -u)"
 if [ "$exas" -gt 0 ] ;
