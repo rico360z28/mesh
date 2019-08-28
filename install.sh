@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Root Check
 exas="$(id -u)"
 if [ "$exas" -gt 0 ] ;
@@ -6,29 +6,14 @@ then
 # we can compare directly with this syntax.
   echo "Please run as root/sudo"
   echo "$exas"
-  echo "sudo ./install.sh"
+  echo "sudo /.install"
   exit 1
 else
 #do your stuff
 #
 # Create Mesh Directory
 mkdir ~/meshcentral
-#
-# Creating Service
-sudo cp ./meshcentral.service /etc/systemd/system/meshcentral.service
-sudo cp ./meshstart.sh /opt/meshstart.sh
-#
-# Work in directory
 cd ~/meshcentral
-#
-# Add Mesh Path to environment
-MESHPATH="$PWD/node_modules"
-echo $MESHPATH
-sleep 5
-echo "MESHPATH=\"$PWD/node_modules"\" | sudo tee -a /etc/environment > /dev/null
-sudo source /etc/environment
-echo $MESHPATH
-sleep 5
 #
 # Apt update
 apt update
@@ -43,7 +28,7 @@ npm install meshcentral
 #
 sleep 2
 #
-cd $MESHPATH
+cd ./node_modules/
 #creating local cert for Meshcentral
 #
 machine="$(hostname -A)"
@@ -58,7 +43,11 @@ sleep 5
 echo "Server will be stopped after local cert is created"
 sleep 10
 kill $(ps aux | grep '[m]esh' | awk '{print $2}')
-
+#
+#Creating Service
+cp ~/mesh/meshcentral.service /etc/systemd/system/meshcentral.service
+cp ~/mesh/meshstart.sh /opt/meshstart.sh
+#
 #Installing Service
 systemctl enable meshcentral.service
 systemctl start meshcentral.service

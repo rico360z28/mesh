@@ -1,4 +1,5 @@
 #!/bin/bash
+meshdir=~/meshcentral/node_modules
 nodejs=/usr/bin/node
-cd $MESHPATH
-$nodejs $MESHPATH/meshcentral $2
+cd $meshdir
+$nodejs $meshdir/meshcentral $2
